@@ -13,10 +13,10 @@ int check_cycle(listint_t *list)
 	listint_t *traverse;
 
 	current = list;
-	while (current != NULL)
+	while (current)
 	{
 		traverse = current->next;
-		while (traverse != NULL)
+		while (traverse)
 		{
 			if (current == traverse)
 				return (1);
@@ -24,7 +24,6 @@ int check_cycle(listint_t *list)
 		}
 		current = current->next;
 	}
-
 	return (0);
 }
 
