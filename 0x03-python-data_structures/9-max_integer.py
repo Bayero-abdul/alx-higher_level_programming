@@ -9,7 +9,7 @@ def max_integer(my_list=[]):
             the biggest integer of a list
     """
 
-    if list == []:
+    if my_list == []:
         return None
 
     max = 0
