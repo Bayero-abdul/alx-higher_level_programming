@@ -8,11 +8,10 @@ def print_matrix_integer(matrix=[[]]):
         Returns: void
     """
     if matrix == [[]]:
-        print()
-    else:
-        for row in matrix:
-            for i, elem in enumerate(row):
-                if i == 2:
-                    print("{:d}".format(elem))
-                else:
-                    print("{:d}".format(elem), end=" ")
+        print("{}".format(""))
+    for row in matrix:
+        for i, elem in enumerate(row):
+            if i == len(row) - 1:
+                print("{:d}".format(elem))
+            else:
+                print("{:d}".format(elem), end=" ")
