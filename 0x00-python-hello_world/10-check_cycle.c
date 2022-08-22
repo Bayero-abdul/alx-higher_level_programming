@@ -4,16 +4,16 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *hare = list->next->next;
-	listint_t *tortoise = list->next;
-	while (hare)
+	listint_t *hare = list->next;
+	listint_t *tortoise = list->;
+
+	while (hare != NULL)
 	{	
 		hare = hare->next->next;
 		tortoise = tortoise->next;
 		
 		if (hare == tortoise)
 			return 1;
-	}	
-
+	}
 	return 0;
 }
