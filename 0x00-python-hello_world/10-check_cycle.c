@@ -4,14 +4,15 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *head = list;
-	listint_t *start = list->next;
-	while (start)
+	listint_t *hare = list->next->next;
+	listint_t *tortoise = list->next;
+	while (hare)
 	{	
-		if (head == start)
+		hare = hare->next->next;
+		tortoise = tortoise->next;
+		
+		if (hare == tortoise)
 			return 1;
-
-		start = start->next;
 	}	
 
 	return 0;
