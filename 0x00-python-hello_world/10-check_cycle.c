@@ -16,11 +16,9 @@ int check_cycle(listint_t *list)
 	while (hare)
 	{
 		tortoise = tortoise->next;
-		if (!tortoise)
-			return (0);
 		hare = hare->next->next;
-		if (!hare)
-			return (0);
+		if (!hare || !tortoise)
+			break;
 
 		if (hare == tortoise)
 			return (1);
