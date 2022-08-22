@@ -10,11 +10,12 @@
 
 int check_cycle(listint_t *list)
 {
-	if (list == NULL)
-		return (0);
 
 	listint_t *hare = list;
 	listint_t *tortoise = list;
+
+	if (list == NULL)
+		return (0);
 
 	while (hare)
 	{
