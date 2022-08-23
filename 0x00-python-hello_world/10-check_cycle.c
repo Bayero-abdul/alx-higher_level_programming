@@ -14,18 +14,10 @@ int check_cycle(listint_t *list)
 	listint_t *hare = list;
 	listint_t *tortoise = list;
 
-	if (list == NULL)
-		return (0);
-
-	while (hare)
+	while (tortoise != NULL && hare != NULL && hare->next != NULL)
 	{
 		tortoise = tortoise->next;
-		if (tortoise == NULL)
-			break;
-
 		hare = hare->next->next;
-		if (hare == NULL)
-			break;
 
 		if (hare == tortoise)
 			return (1);
