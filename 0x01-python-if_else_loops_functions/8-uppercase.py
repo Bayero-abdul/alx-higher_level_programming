@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def uppercase(str):
     if str == "":
-        print("\n")
+        print("")
     else:
         end = ""
         count = 1
