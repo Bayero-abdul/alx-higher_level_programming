@@ -1,13 +1,13 @@
 # 0x00. Python - Hello, World
----
+***
 
 ## Description
----
+***
 This project gives you an insight about python programming language.
 
 
 ## Learnt
----
+***
 * Why Python programming is awesome
 * Who created Python
 * Who is Guido van Rossum
@@ -21,7 +21,7 @@ This project gives you an insight about python programming language.
 
 
 ## Resources
----
+***
 * [The Python tutorial](https://docs.python.org/3/tutorial/index.html) (only the first three chapters below)
 * [Whetting Your Appetite](https://alx-intranet.hbtn.io/rltoken/kifRlLG2iMX5AZiW8lrCMg)
 * [Using the Python Interpreter](https://alx-intranet.hbtn.io/rltoken/kifRlLG2iMX5AZiW8lrCMg)
