@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 -c "import os, py_compile; name = os.environ.get('PYFILE'); py_compile.compile(name, f'{name}c')"
