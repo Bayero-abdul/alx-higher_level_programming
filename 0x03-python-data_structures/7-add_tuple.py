@@ -4,31 +4,16 @@ def add_tuple(tuple_a=(), tuple_b=()):
     first_elem = 0
     second_elem = 0
 
-    if tuple_a == () and tuple_b == ():
-        first_elem = 0
-        second_elem = 0
-    elif tuple_a == ():
-        first_elem = tuple_b[0]
-        second_elem = tuple_b[1]
-    elif tuple_b == ():
-        first_elem = tuple_a[0]
-        second_elem = tuple_a[1]
-    elif len(tuple_a) < 2 and len(tuple_b) >= 2:
-        if tuple_a[0] is None:
-            first_elem = tuple_b[0]
-            second_elem = tuple_a[1] + tuple_b[1]
-        else:
-            first_elem = tuple_a[0] + tuple_b[0]
-            second_elem = tuple_b[1]
-    elif len(tuple_b) < 2 and len(tuple_a) >= 2:
-        if tuple_b[0] is None:
-            first_elem = tuple_a[0]
-            second_elem = tuple_a[1] + tuple_b[1]
-        else:
-            first_elem = tuple_a[0] + tuple_b[0]
-            second_elem = tuple_a[1]
-    else:
-        first_elem = tuple_a[0] + tuple_b[0]
-        second_elem = tuple_a[1] + tuple_b[1]
+    if len(tuple_a) >= 2:
+        first_elem += tuple_a[0]
+        second_elem += tuple_a[1]
+    elif len(tuple_a) == 1:
+        first_elem += tuple_a[0]
 
-    return((first_elem, second_elem))
+    if len(tuple_b) >= 2:
+        first_elem += tuple_b[0]
+        second_elem += tuple_b[1]
+    elif len(tuple_b) == 1:
+        first_elem += tuple_b[0]
+
+    return ((first_elem, second_elem))
