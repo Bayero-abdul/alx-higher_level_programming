@@ -7,6 +7,9 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if tuple_a == () and tuple_b == ():
         first_elem = 0
         second_elem = 0
+    elif tuple_a == ():
+        first_elem = tuple_b[0]
+        second_elem = tuple_b[1]
     elif tuple_b == ():
         first_elem = tuple_a[0]
         second_elem = tuple_a[1]
