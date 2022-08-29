@@ -9,28 +9,25 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *temp1, *temp2;
-	int first_elem, second_elem;
-
-	if (*head == NULL || (*head)->next == NULL || (*head)->n == (*head)->next->n)
-		return (1);
+	listint_t *current;
+	int arr[100];
+	int i = 0, counter = 0;
 
 	current = *head;
-	first_elem = (*head)->n;
-	while (current->next->next != NULL)
-		current = current->next;
-
-	second_elem = current->next->n;
-	if (first_elem == second_elem)
+	while (current != NULL)
 	{
-		temp1 = *head;
-		*head = (*head)->next;
-		temp2 = current->next;
-		current->next = NULL;
-		free(temp1);
-		free(temp2);
-		return (is_palindrome(head));
+		arr[i++] = current->n;
+		current = current->next;
+		counter++;
 	}
-	else
-		return (0);
+
+	current = *head;
+	counter = counter / 2;
+	while (--counter)
+	{
+		if (current->n != arr[--i])
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }
