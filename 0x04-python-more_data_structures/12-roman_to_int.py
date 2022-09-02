@@ -27,11 +27,9 @@ def roman_to_int(roman_string):
                     first_num == curr_num and counter == 0:
                 counter = 0
                 sum_num += cluster_sum
-                print(f"cluster_sum: {cluster_sum}")
                 cluster_sum = 0
             else:
                 counter = counter + 1
 
     sum_num += cluster_sum
-    print(f"cluster_sum: {cluster_sum}")
     return (sum_num)
