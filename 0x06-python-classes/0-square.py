@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-class Square:
-    """Square is an empty class that defines a squareafdadfasdfadsjkasdhfjksdhfajksdfkajsdhfkjahsdkfhaksdfhaksdhfkahfjkahsjkd.
+"""
+This module contains a "class Square"
+definition"""
 
-    Attributes:
-        None
-    
-    """
+
+class Square:
+    """Square is an empty class that defines a square"""
     pass
