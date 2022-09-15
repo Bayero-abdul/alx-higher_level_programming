@@ -77,7 +77,7 @@ void print_python_bytes(PyObject *p)
 
 	for (i = 0; i <= len; i++)
 	{
-		if (i == len - 1)
+		if (i == len)
 			printf("%02hhx\n", string[i]);
 		else
 			printf("%02hhx ", string[i]);
