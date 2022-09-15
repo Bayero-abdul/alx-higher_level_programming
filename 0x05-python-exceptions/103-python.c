@@ -17,12 +17,17 @@ void print_python_list(PyObject *p)
 	PyListObject *list = (PyListObject *)p;
 	
 	fflush(stdout);	
-	len = PyObject_Length(p);
-	alloc = ((PyListObject *)p)->allocated;
+
 	printf("[*] Python list info\n");
+	if (!PyList_Check(p))
+	{
+		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
+	len = PyObject_Length(p);
+        alloc = ((PyListObject *)p)->allocated;
 	printf("[*] Size of the Python List = %zd\n", len);
 	printf("[*] Allocated = %zd\n", alloc);
-
 	for (i = 0; i < len; i++)
 	{
 		PyObject *index = PyLong_FromSsize_t(i);
@@ -41,7 +46,6 @@ void print_python_list(PyObject *p)
 			print_python_float(list->ob_item[i]);
 		Py_DECREF(index);
 	}
-	fflush(stdout);
 }
 
 
@@ -59,7 +63,6 @@ void print_python_bytes(PyObject *p)
 	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
-		fflush(stdout);
 		return;
 	}
 
@@ -72,14 +75,13 @@ void print_python_bytes(PyObject *p)
 		len = 9;
 	printf("  first %zd bytes: ", len + 1);
 
-	for (i = 0; i <= len && i < 10; i++)
+	for (i = 0; i <= len; i++)
 	{
-		if (i == len || i == 9)
+		if (i == len - 1)
 			printf("%02hhx\n", string[i]);
 		else
 			printf("%02hhx ", string[i]);
 	}
-	fflush(stdout);
 }
 
 
@@ -96,8 +98,7 @@ void print_python_float(PyObject *p)
         printf("[.] float object info\n");
         if (!PyFloat_Check(p))
         {
-                printf("  [ERROR] Invalid List Object\n");
-		fflush(stdout);
+                printf("  [ERROR] Invalid Float Object\n");
                 return;
         }
 
@@ -105,5 +106,4 @@ void print_python_float(PyObject *p)
 	str_float = PyOS_double_to_string(num, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
         printf("  value: %s\n", str_float);
 	PyMem_Free(str_float);
-	fflush(stdout);
 }
