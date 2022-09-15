@@ -62,9 +62,11 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	printf("  size: %ld\n", len);
 	printf("  trying string: %s\n", string);
+	if (len > 9)
+		len = 9;
 	printf("  first %zd bytes: ", len + 1);
 
-	for (i = 0; i < len + 1 && i < 10; i++)
+	for (i = 0; i <= len && i < 10; i++)
 	{
 		if (i == len || i == 9)
 			printf("%02hhx\n", string[i]);
