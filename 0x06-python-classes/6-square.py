@@ -41,7 +41,7 @@ class Square:
     def position(self, position):
         """sets the value position to the private position variable."""
         if type(position) != tuple or len(position) != 2 or\
-                (type(position[0]) != int and type(position[1]) != int):
+                (type(position[0]) != int or type(position[1]) != int):
             raise TypeError("position must be a tuple of 2 positive integers")
         if position[0] < 0 and position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
