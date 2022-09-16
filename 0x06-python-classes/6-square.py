@@ -12,7 +12,7 @@ class Square:
 
         Args:
             size (int): size of the square.
-            position (tuple):
+            position (tuple): position to start printing
 
         """
         self.size = size
@@ -25,8 +25,7 @@ class Square:
 
     @size.setter
     def size(self, size):
-        """size is a method which sets the value size
-        to the private size variable."""
+        """sets the value size to the private size variable."""
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
@@ -35,16 +34,14 @@ class Square:
 
     @property
     def position(self):
-        """position is a method which is used for getting
-        the value of position."""
+        """gets the value of position."""
         return self.__position
 
     @position.setter
     def position(self, position):
-        """position is a method which sets the value position
-        to the private position variable."""
-        if len(position) < 2 or type(position[0]) != int and
-        type(position[1]) != int:
+        """sets the value position to the private position variable."""
+        if len(position) < 2 or type(position[0]) != int and\
+                type(position[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
         if position[0] < 0 and position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -56,7 +53,6 @@ class Square:
 
     def my_print(self):
         """ prints a block of # """
-
         if self.size == 0:
             print()
 
