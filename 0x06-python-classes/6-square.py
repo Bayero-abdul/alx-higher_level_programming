@@ -40,8 +40,8 @@ class Square:
     @position.setter
     def position(self, position):
         """sets the value position to the private position variable."""
-        if len(position) < 2 or type(position[0]) != int and\
-                type(position[1]) != int:
+        if type(position) != tuple or len(position) != 2 or\
+                (type(position[0]) != int and type(position[1]) != int):
             raise TypeError("position must be a tuple of 2 positive integers")
         if position[0] < 0 and position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -55,15 +55,9 @@ class Square:
         """ prints a block of # """
         if self.size == 0:
             print()
-
-        no_of_lines = self.size + self.position[1]
-        for i in range(no_of_lines):
-            if i < self.position[1]:
-                print()
-                continue
-            else:
-                for j in range(self.position[0]):
-                    print(" ", end="")
-                for k in range(self.size):
-                    print("#", end="")
-                print()
+        else:
+            for i in range(self.position[1]):
+                print("")
+            for j in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
