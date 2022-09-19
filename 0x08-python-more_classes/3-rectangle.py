@@ -49,9 +49,11 @@ class Rectangle:
         """retuns the string representation of a class"""
         if self.width == 0 or self.height == 0:
             return ""
-        result = ""
-        for i in range(self.height):
-            for j in range(self.width):
-                result += '#'
-            result += '\n'
-        return result
+        else:
+            result = ""
+            for i in range(self.height):
+                for j in range(self.width):
+                    result += '#'
+                if i != self.height - 1:
+                    result += '\n'
+            return result
