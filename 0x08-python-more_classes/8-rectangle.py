@@ -70,7 +70,7 @@ class Rectangle:
         print("Bye rectangle...")
         if Rectangle.number_of_instances > 0:
             Rectangle.number_of_instances -= 1
-    
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if type(rect_1) != Rectangle:
