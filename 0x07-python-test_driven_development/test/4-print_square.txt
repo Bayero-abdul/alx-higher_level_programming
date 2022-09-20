@@ -1,0 +1,31 @@
+The print_square() examples
+===========================
+
+``print_square()`` prints a square with the character #
+
+Examples
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square()
+	Traceback (most recent call last): 
+		...
+	TypeError: print_square() missing 1 required positional arguments: 'size'
+	>>> print_square(0) #doctest: +NORMALIZE_WHITESPACE
+	
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+	>>> print_square(-1) #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+        ...
+	ValueError: size must be >= 0
+	>>> print_square(-7.3) #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+	>>> print_square("Hello") #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+		 ...
+	TypeError: size must be an integer
