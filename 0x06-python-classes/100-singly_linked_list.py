@@ -82,7 +82,10 @@ class SinglyLinkedList:
         """representation of the string."""
         if self.__head is not None:
             current = self.__head
-            result = str(current.data) + '\n'
+            if current.next_node is None:
+                result = str(current.data)
+            else:
+                result = str(current.data) + '\n'
             while current.next_node is not None:
                 current = current.next_node
                 if current.next_node is None:
