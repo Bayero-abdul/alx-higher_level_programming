@@ -11,7 +11,7 @@ Examples
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 
 Numbers:
-
+	
 	>>> add_integer(1, 2)
 	3
 	>>> add_integer(100, -2)
@@ -24,6 +24,12 @@ Numbers:
 	-11
 	>>> add_integer(-0)
 	98
+	>>> nan = float('NaN')
+	>>> inf = float('inf')
+	>>> add_integer(nan)
+	187
+	>>> add_integer(inf)
+	89
 
 Mixed:
 
