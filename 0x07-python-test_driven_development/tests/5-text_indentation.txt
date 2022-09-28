@@ -10,57 +10,35 @@ Examples
 	>>> text_indentation()
 	Traceback (most recent call last):
 		...
-	TypeError: text_indentation() missing 1 required positional arguments: 'text'
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
 
 	>>> text_indentation("")
-	>>> text_indentation(".") #doctest: +NORMALIZE_WHITESPACE
-	
-	
-	>>> text_indentation(".?:") #doctest: +NORMALIZE_WHITESPACE
-	
-	
-	
-	
-	
-	
+	>>> text_indentation(".")
+	.
+
+	>>> text_indentation(".?:")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
 	
 	>>> text_indentation(234)
 	Traceback (most recent call last):
 		...
 	TypeError: text must be a string
-
-	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")  #doctest: +NORMALIZE_WHITESPACE
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	
-	Quonam modo?
-
-	Utrum igitur tibi litteram videor an totas paginas commovere?
-
-	Non autem hoc:
+	>>> text_indentation("I love challenge.")
+	I love challenge.
 	
-	igitur ne illud quidem.
+	>>> text_indentation("ALX i'm sorry. but you are going to get crushed by who? by me:")
+	ALX i'm sorry.
+	<BLANKLINE>
+	but you are going to get crushed by who?
+	<BLANKLINE>
+	by me:
 	
-	Fortasse id optimum, sed ubi illud:
-	
-	Plus semper voluptatis?
-
-	Teneo, inquit, finem illi videri nihil dolere.
-	
-	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-	
-	Si id dicis, vicimus.
-	
-	Inde sermone vario sex illa a Dipylo stadia confecimus.
-	
-	Sin aliud quid voles, postea.
-	
-	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-	
+	>>> text_indentation("hello friends. I am awake")
+	hello friends.
+	<BLANKLINE>
+	I am awake
