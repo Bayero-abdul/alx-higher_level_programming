@@ -22,14 +22,14 @@ def roman_to_int(roman_string):
 
         if i + 1 < len(roman_string):
             next_num = rom_to_int[roman_string[i + 1]]
-            if counter == 1 or counter == 2 or counter == 3 and\
-                    curr_num != next_num or\
-                    first_num == curr_num and counter == 0:
+            if (counter == 1 or counter == 2 or counter == 3 and curr_num != next_num) or (first_num == curr_num and counter == 0):
                 counter = 0
                 sum_num += cluster_sum
+                print(f"cluster_sum: {cluster_sum}")
                 cluster_sum = 0
             else:
                 counter = counter + 1
 
     sum_num += cluster_sum
+    print(f"cluster_sum: {cluster_sum}")
     return (sum_num)
