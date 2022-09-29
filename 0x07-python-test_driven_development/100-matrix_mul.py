@@ -9,15 +9,15 @@ def matrix_mul(m_a, m_b):
     if type(m_b) != list:
         raise TypeError("m_b must be a list")
 
-    if is_empty(m_a):
-        raise ValueError("m_a can't be empty")
-    if is_empty(m_b):
-        raise ValueError("m_b can't be empty")
-
     if not is_matrix(m_a):
         raise TypeError("m_a must be a list of lists")
     if not is_matrix(m_b):
         raise TypeError("m_b must be a list of lists")
+
+    if is_empty(m_a):
+        raise ValueError("m_a can't be empty")
+    if is_empty(m_b):
+        raise ValueError("m_b can't be empty")
 
     if not is_matrix_of_floats_ints(m_a):
         raise TypeError("m_a should only contain integers or floats")

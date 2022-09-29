@@ -17,7 +17,7 @@
 		...
 	TypeError: m_a must be a list
 
-	>>> matrix_mul([[1, 4], [5, 3]], ("set",))
+	>>> matrix_mul([[1, 4], [5, 3]], "set")
 	Traceback (most recent call last):
 		...
 	TypeError: m_b must be a list
