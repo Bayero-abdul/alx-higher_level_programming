@@ -64,11 +64,10 @@ class Square:
 
     def __str__(self):
         """representation of the string."""
-        result = "\n"
+        result = ""
         if self.size == 0:
             return result
         else:
-            result = ""
             for i in range(self.position[1]):
                 result += "\n"
             for j in range(self.size):
