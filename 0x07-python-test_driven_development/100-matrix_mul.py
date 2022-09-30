@@ -20,9 +20,9 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_b can't be empty")
 
     if not is_matrix_of_floats_ints(m_a):
-        raise TypeError("m_a should only contain integers or floats")
+        raise TypeError("m_a should contain only integers or floats")
     if not is_matrix_of_floats_ints(m_b):
-        raise TypeError("m_b should only contain integers or floats")
+        raise TypeError("m_b should contain only integers or floats")
 
     if not is_rectangle(m_a):
         raise TypeError("each row of m_a must be of the same size")
