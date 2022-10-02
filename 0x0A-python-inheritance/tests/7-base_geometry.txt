@@ -19,6 +19,31 @@ Test for module 7-base_geometry
 		...
 	TypeError: name must be an integer
 
+	>>> bg.integer_validator("name", {6, 7})
+	Traceback (most recent call last):
+        ...
+	TypeError: name must be an integer
+
+	>>> bg.integer_validator("name", (5,))
+	Traceback (most recent call last):
+        ...
+	TypeError: name must be an integer
+
+	>>> bg.integer_validator("name", None)
+	Traceback (most recent call last):
+        ...
+	TypeError: name must be an integer
+
+	>>> bg.integer_validator("name", True)
+	Traceback (most recent call last):
+        ...
+	TypeError: name must be an integer
+
+	>>> bg.integer_validator("name", [5])
+	Traceback (most recent call last):
+        ...
+	TypeError: name must be an integer
+
 	>>> bg.integer_validator("age", 0)
 	Traceback (most recent call last):
 		...
@@ -28,3 +53,8 @@ Test for module 7-base_geometry
 	Traceback (most recent call last):
 		...
 	ValueError: price must be greater than 0
+
+	>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
