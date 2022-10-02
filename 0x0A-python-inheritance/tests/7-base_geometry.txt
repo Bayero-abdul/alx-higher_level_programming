@@ -54,7 +54,7 @@ Test for module 7-base_geometry
 		...
 	ValueError: price must be greater than 0
 
-	>> bg.area()
+	>>> bg.area()
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
