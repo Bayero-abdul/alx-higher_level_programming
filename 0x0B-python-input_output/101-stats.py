@@ -2,8 +2,14 @@
 """Module contain reads stdin line by line and computes metric"""
 
 
-import sys
+import sys, signal
 
+def handler(signal, frame):
+    print(f"File size: {total_size}")
+    for key, value in sorted(metrics.items()):
+        print(f"{key}: {value}")
+
+signal.signal(signal.SIGINT, handler)
 status_code = ["200", "301", "400", "401", "403", "404", "405", "500"]
 metrics = {}
 total_size = 0
