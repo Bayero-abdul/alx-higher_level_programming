@@ -131,10 +131,11 @@ class Rectangle(Base):
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle."""
 
-        new_dict = {}
-        for k, v in self.__dict__.items():
-            if k[:12] == '_Rectangle__':
-                new_dict[k[12:]] = v
-            else:
-                new_dict[k] = v
+        new_dict = {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
         return new_dict
