@@ -18,7 +18,7 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            Base.id = Base.__nb_objects
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -35,7 +35,7 @@ class Base:
 
         filename = cls.__name__ + '.' + 'json'
         with open(filename, 'w', encoding='utf-8') as f:
-            if list_objs is None:
+            if not list_objs:
                 f.write('[]')
             else:
                 my_list = [obj.to_dictionary() for obj in list_objs]
@@ -72,7 +72,8 @@ class Base:
             filename = cls.__name__ + '.' + "json"
             with open(filename, 'r', encoding='utf-8') as f:
                 new_list = []
-                for obj_dict in cls.from_json_string(f.read()):
+                iter_list = cls.from_json_string(f.read())
+                for obj_dict in iter_list:
                     new_list.append(cls.create(**obj_dict))
                 return new_list
 
