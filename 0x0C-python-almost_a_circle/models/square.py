@@ -18,4 +18,4 @@ class Square(Rectangle):
         """string representation."""
 
         return f"[Square] ({self.id}) {self.x}/{self.y} - \
-{self.width}/{self.width}"
+{self.width}"
