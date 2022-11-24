@@ -53,6 +53,13 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set."""
 
-        dummy = cls(10, 10)
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls == Rectangle:
+            dummy = Rectangle(10, 10)
+        else:
+            dummy = Square(10)
+
         dummy.update(**dictionary)
         return dummy
