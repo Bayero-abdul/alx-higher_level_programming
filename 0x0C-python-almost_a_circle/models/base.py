@@ -72,8 +72,8 @@ class Base:
             filename = cls.__name__ + '.' + "json"
             with open(filename, 'r', encoding='utf-8') as f:
                 new_list = []
-                for obj_dict in json.loads(f.read()):
-                    new_list.append(cls(**obj_dict))
+                for obj_dict in cls.from_json_string(f.read()):
+                    new_list.append(cls.create(**obj_dict))
                 return new_list
 
         except FileNotFoundError:
