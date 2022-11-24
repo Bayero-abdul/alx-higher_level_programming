@@ -115,7 +115,6 @@ class Rectangle(Base):
         """Assigns an argument to each attribute."""
 
         if args:
-            print("i am args")
             try:
                 self.id = args[0]
                 self.width = args[1]
