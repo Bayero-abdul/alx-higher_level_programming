@@ -25,6 +25,6 @@ class Base:
         """returns the JSON string representation."""
 
         if not list_dictionaries:
-            return json.dumps(list_dictionaries)
-        else:
             return json.dumps([])
+        else:
+            return json.dumps(list_dictionaries)
