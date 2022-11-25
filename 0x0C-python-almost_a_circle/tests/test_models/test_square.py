@@ -78,6 +78,12 @@ class TestSquare(unittest.TestCase):
         s1.update(None)
         self.assertEqual(str(s1), str(s1))
 
+    def test_str(self):
+        """test for __str__()."""
+
+        s1 = Square(5, 3, 6, 1)
+        self.assertEqual(s1.__str__(), '[Square] (1) 3/6 - 5')
+
 
 if __name__ == "__main__":
     unittest.main()
