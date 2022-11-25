@@ -12,9 +12,15 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """Test case for Rectangle class."""
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         self.r1 = Rectangle(10, 7, 2, 8)
         self.lst = []
+
+    @classmethod
+    def tearDownClass(self):
+        if os.path.exists('Rectangle.json'):
+            os.remove('Rectangle.json')
 
     def test_initialization(self):
         """test for initialization."""
@@ -129,6 +135,17 @@ class TestRectangle(unittest.TestCase):
 
         r1.update(None)
         self.assertEqual(str(r1), str(r1))
+
+    def test_save_to_file(self):
+        """test save_to_file()."""
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue('[]', f.read())
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue('[]', f.read())
 
 
 if __name__ == "__main__":
