@@ -50,8 +50,8 @@ class TestRectangle(unittest.TestCase):
     def test_height_attr(self):
         """test for height."""
 
-        self.r1.height = 4
-        self.assertEqual(self.r1.height, 4)
+        r1 = Rectangle(10, 3)
+        self.assertTrue(r1.height == 3)
 
         types = ['3', None, '3.12', {'ella': 1}, [3, 5], (4, 5)]
         for t in types:
