@@ -75,11 +75,6 @@ class TestSquare(unittest.TestCase):
         s1 = Square(5)
 
         s1.update(1, 2, 3, 4)
-        self.assertEqual(str(s1), '[Square] (1) 3/4 - 2')
-
-        s1.update(size=7, id=89, x=7, y=1)
-        self.assertEqual(str(s1), '[Square] (89) 7/1 - 7')
-
         s1.update(None)
         self.assertEqual(str(s1), str(s1))
 
