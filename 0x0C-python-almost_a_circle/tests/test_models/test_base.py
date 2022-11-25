@@ -42,7 +42,6 @@ class TestBase(unittest.TestCase):
         """test for rectangle class."""
 
         r1 = Rectangle(10, 2)
-        print(f'r1.id: {r1.id}')
         self.assertTrue(r1.id == 12)
 
         r2 = Rectangle(2, 10)
