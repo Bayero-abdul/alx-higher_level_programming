@@ -143,6 +143,9 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertTrue('[]', f.read())
 
+    def test_save_to_file_None(self):
+        """test save_to_file() with None arg."""
+
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             self.assertTrue('[]', f.read())
