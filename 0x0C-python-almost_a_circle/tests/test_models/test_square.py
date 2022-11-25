@@ -83,17 +83,6 @@ class TestSquare(unittest.TestCase):
         s1.update(None)
         self.assertEqual(str(s1), str(s1))
 
-    def test_save_to_file(self):
-        """test save_to_file()."""
-
-        Square.save_to_file([])
-        with open("Square.json", "r") as f:
-            self.assertTrue('[]', f.read())
-
-        Square.save_to_file(None)
-        with open("Square.json", "r") as f:
-            self.assertTrue('[]', f.read())
-
 
 if __name__ == "__main__":
     unittest.main()

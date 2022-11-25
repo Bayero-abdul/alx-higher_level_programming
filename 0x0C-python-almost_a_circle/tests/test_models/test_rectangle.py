@@ -136,20 +136,6 @@ class TestRectangle(unittest.TestCase):
         r1.update(None)
         self.assertEqual(str(r1), str(r1))
 
-    def test_save_to_file(self):
-        """test save_to_file()."""
-
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as f:
-            self.assertTrue('[]', f.read())
-
-    def test_save_to_file_None(self):
-        """test save_to_file() with None arg."""
-
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as f:
-            self.assertTrue('[]', f.read())
-
 
 if __name__ == "__main__":
     unittest.main()
