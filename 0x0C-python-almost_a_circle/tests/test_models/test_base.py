@@ -2,27 +2,29 @@
 """this module contains testcases for Base class."""
 
 
+import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-import unittest
-import os
-
 
 class TestBase(unittest.TestCase):
     """Test case for Base class."""
 
     @classmethod
     def setUpClass(self):
+        """set up code."""
+        
         self.r1 = Rectangle(10, 7, 2, 8)
         self.lst = []
 
     @classmethod
     def tearDownClass(self):
+        """tear down code."""
 
         if os.path.exists('Rectangle.json'):
             os.remove('Rectangle.json')
-
+        
         if os.path.exists('Square.json'):
             os.remove('Square.json')
 
@@ -130,3 +132,7 @@ class TestBase(unittest.TestCase):
 
         self.assertTrue([] == Rectangle.load_from_file())
         self.assertTrue([] == Square.load_from_file())
+
+
+if __name__ == "__main__":
+    unittest.main()

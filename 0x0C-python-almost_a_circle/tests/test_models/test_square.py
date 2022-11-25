@@ -2,16 +2,11 @@
 """this module contains testcases for Square class."""
 
 
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 import unittest
-import os
-import sys
-import io
+from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     """Test case for Square class."""
 
     def test_size(self):
@@ -41,3 +36,7 @@ class TestBase(unittest.TestCase):
 
         s1.update(None)
         self.assertEqual(str(s1), str(s1))
+
+
+if __name__ == "__main__":
+    unittest.main()

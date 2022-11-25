@@ -2,31 +2,20 @@
 """this module contains testcases for Rectangle class."""
 
 
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 import unittest
 import os
 import sys
 import io
+from models.rectangle import Rectangle
 
 
-class TestBase(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     """Test case for Rectangle class."""
 
-    @classmethod
-    def setUpClass(self):
+    def setUp(self):
         self.r1 = Rectangle(10, 7, 2, 8)
         self.lst = []
 
-    @classmethod
-    def tearDownClass(self):
-
-        if os.path.exists('Rectangle.json'):
-            os.remove('Rectangle.json')
-
-        if os.path.exists('Square.json'):
-            os.remove('Square.json')
 
     def test_width_attr(self):
         """test for width."""
@@ -112,3 +101,7 @@ class TestBase(unittest.TestCase):
 
         r1.update(None)
         self.assertEqual(str(r1), str(r1))
+
+
+if __name__ == "__main__":
+    unittest.main()
