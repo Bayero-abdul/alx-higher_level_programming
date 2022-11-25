@@ -8,13 +8,14 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase(unittest.TestCase):
     """Test case for Base class."""
 
     @classmethod
     def setUpClass(self):
         """set up code."""
-        
+
         self.r1 = Rectangle(10, 7, 2, 8)
         self.lst = []
 
@@ -24,7 +25,7 @@ class TestBase(unittest.TestCase):
 
         if os.path.exists('Rectangle.json'):
             os.remove('Rectangle.json')
-        
+
         if os.path.exists('Square.json'):
             os.remove('Square.json')
 
@@ -39,18 +40,6 @@ class TestBase(unittest.TestCase):
 
         b2.id = 7
         self.assertTrue(b2.id == 7)
-
-    def test_rectangle(self):
-        """test for rectangle class."""
-
-        r1 = Rectangle(10, 2)
-        self.assertTrue(r1.id == 12)
-
-        r2 = Rectangle(2, 10)
-        self.assertTrue(r2.id == 13)
-
-        r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertTrue(r3.id == 12)
 
     def test_to_json_string(self):
         """test to_json_string()."""

@@ -16,6 +16,13 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(10, 7, 2, 8)
         self.lst = []
 
+    def test_initialization(self):
+        """test for initialization."""
+
+        r1 = Rectangle(10, 2)
+        self.assertIs(type(r1), Rectangle)
+        r2 = Rectangle(10, 5, 6)
+        self.assertTrue(type(r2), Rectangle)
 
     def test_width_attr(self):
         """test for width."""
@@ -31,6 +38,9 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(-10, 10)
 
+        with self.assertRaises(ValueError):
+            Rectangle(0, 10)
+
     def test_height_attr(self):
         """test for height."""
 
@@ -44,6 +54,9 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             Rectangle(10, -10)
+
+        with self.assertRaises(ValueError):
+            Rectangle(10, 0)
 
     def test_x_attr(self):
         """test for x."""
@@ -86,8 +99,23 @@ class TestRectangle(unittest.TestCase):
         captured_output = io.StringIO()
         sys.stdout = captured_output
         r1.display()
-        sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), output)
+
+        output = "##\n##\n"
+        r2 = Rectangle(2, 2)
+        c_o = io.StringIO()
+        sys.stdout = c_o
+        r2.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(c_o.getvalue(), output)
+
+        output = " ###\n ###\n"
+        r3 = Rectangle(3, 2, 1)
+        c_o = io.StringIO()
+        sys.stdout = c_o
+        r3.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(c_o.getvalue(), output)
 
     def test_update(self):
         """test for update()."""
