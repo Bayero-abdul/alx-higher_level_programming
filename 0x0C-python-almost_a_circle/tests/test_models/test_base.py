@@ -76,12 +76,15 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertEqual('[]', f.read())
 
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as f:
-            self.assertEqual('[]', f.read())
-
         Square.save_to_file([])
         with open("Square.json", "r") as f:
+            self.assertEqual('[]', f.read())
+
+    def test_for_none(self):
+        """test save_to_file(None)."""
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
             self.assertEqual('[]', f.read())
 
         Square.save_to_file(None)
