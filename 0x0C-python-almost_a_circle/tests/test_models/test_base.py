@@ -76,7 +76,15 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertTrue('[]', f.read())
 
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue('[]', f.read())
+
         Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertTrue('[]', f.read())
+
+        Square.save_to_file(None)
         with open("Square.json", "r") as f:
             self.assertTrue('[]', f.read())
 
