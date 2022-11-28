@@ -14,9 +14,9 @@ class Base:
     def __init__(self, id=None):
         """Initializes an instance."""
 
-        if type(id) is int:
+        if id:
             self.id = id
-        else:
+        elif not id:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
