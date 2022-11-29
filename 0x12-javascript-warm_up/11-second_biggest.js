@@ -3,11 +3,8 @@
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  const numbers = [];
-  const args = process.argv;
-  for (let i = 2; i < args.length; i++) {
-    numbers.push(Number(args[i]));
-  }
-  numbers.sort();
-  console.log(numbers[numbers.length - 2]);
+  const args = process.argv.map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
