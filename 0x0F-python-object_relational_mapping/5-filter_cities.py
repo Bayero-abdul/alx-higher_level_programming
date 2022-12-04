@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+"""takes in the name of a state as an argument and
+lists all cities of that state, using the db hbtn_0e_4_usa.
+
+"""
+
+if __name__ == "__main__":
+
+    import MySQLdb
+    from sys import argv
+
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
+    cur = db.cursor()
+    state_name = argv[4]
+    cur.execute("SELECT cities.name FROM cities \
+                JOIN states ON cities.state_id=states.id \
+                WHERE states.name = '{}' \
+                ORDER BY cities.id".format(state_name))
+    rows = cur.fetchall()
+
+    for i in range(len(rows)):
+        end = ", "
+        if i == (len(rows) - 1):
+            end = "\n"
+
+        print(rows[i][0], end=end)
