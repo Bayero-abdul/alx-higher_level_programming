@@ -3,6 +3,7 @@
 where name matches the argument.
 
 """
+
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
@@ -13,6 +14,6 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states WHERE name = '{}' \
                 ORDER BY states.id".format(argv[4]))
     rows = cur.fetchall()
-
     for row in rows:
-        print("({}, '{}')".format(row[0], row[1]))
+        if row[1] == argv[4]:
+            print(row)
