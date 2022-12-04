@@ -16,4 +16,5 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     for row in rows:
-        print("({}, '{}')".format(row[0], row[1]))
+        if row[1] == search_name:
+            print(row)
