@@ -6,9 +6,10 @@ the letter a from the database hbtn_0e_6_usa.
 
 
 if __name__ == "__main__":
+    
     from sys import argv
     from model_state import Base, State
-    from model_city import Base, City
+    from model_city import City
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker, Session
 
