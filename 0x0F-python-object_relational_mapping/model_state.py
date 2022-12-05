@@ -3,14 +3,14 @@
 an instance Base = declarative_base()
 
 """
-
 from sqlalchemy import create_engine, Integer, String, Column
 from sqlalchemy.ext.declarative import declarative_base
+
 
 Base = declarative_base()
 
 
-class State:
+class State(Base):
     """Mapped to table `states`."""
 
     __tablename__ = 'states'
