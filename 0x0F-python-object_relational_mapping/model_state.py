@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """contains the class definition of a State and \
 an instance Base = declarative_base()
 
 """
 
 
-from sqlalchemy import create_engine, Integer, String, Column
+from sqlalchemy import Integer, String, Column
 from sqlalchemy.ext.declarative import declarative_base
 
 
