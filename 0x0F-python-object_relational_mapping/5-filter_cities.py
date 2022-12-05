@@ -17,7 +17,6 @@ if __name__ == "__main__":
                 WHERE states.name = %s \
                 ORDER BY cities.id", (argv[4],))
     rows = cur.fetchall()
-    
     if rows:
         for i in range(len(rows)):
             if i == (len(rows) - 1):
