@@ -13,5 +13,6 @@ def main():
     r = requests.post(url, data={'email': email})
     print(r.text)
 
+
 if __name__ == '__main__':
     main()
