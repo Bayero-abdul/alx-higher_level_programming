@@ -4,6 +4,7 @@ and displays the body of the response.
 
 """
 
+
 def main():
     from sys import argv
     from urllib import request
@@ -14,6 +15,7 @@ def main():
     data = data.encode('ascii')
     with request.urlopen(url, data) as f:
         print(f.read().decode('utf-8'))
+
 
 if __name__ == '__main__':
     main()
