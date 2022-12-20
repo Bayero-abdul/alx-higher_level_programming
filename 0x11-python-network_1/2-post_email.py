@@ -10,7 +10,7 @@ def main():
     from urllib import parse
 
     url, email = argv[1], argv[2]
-    data = parse.urlencode({'email': 'hr@holbertonschool.com'})
+    data = parse.urlencode({'email': email})
     data = data.encode('ascii')
     with request.urlopen(url, data) as f:
         print(f.read().decode('utf-8'))
