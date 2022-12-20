@@ -4,6 +4,7 @@ with the letter as a parameter.
 
 """
 
+
 def main():
     from sys import argv
     import requests
@@ -11,7 +12,7 @@ def main():
     data = {}
     try:
         data['q'] = argv[1]
-    except:
+    except IndexError:
         data['q'] = ""
 
     r = requests.post('http://0.0.0.0:5000/search_user', data=data)
