@@ -15,5 +15,5 @@ def main():
     except HTTPError as e:
         print('Error code: ', e.code)
 
-if __name__ == '__main__':                                                                            i
+if __name__ == '__main__':
     main()
