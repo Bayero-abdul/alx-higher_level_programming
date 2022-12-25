@@ -11,8 +11,9 @@ def main():
 
     user, repo = argv[1], argv[2]
     r = requests.get(f'https://api.github.com/repos/{user}/{repo}/commits')
-    commit_list = r.json()
-    for commit in commit_list[0:10]:
+    commit_list = r.json()[:10]
+
+    for commit in commit_list:
         print('{}: {}'.format(commit.get('sha'),
               commit.get('commit').get('author').get('name')))
 
