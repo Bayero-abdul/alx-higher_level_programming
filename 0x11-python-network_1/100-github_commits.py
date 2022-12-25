@@ -5,18 +5,14 @@ repository "rails" by the user “rails”
 """
 
 
-def main():
+if __name__ == '__main__':
     import sys
     import requests
 
     user, repo = sys.argv[1], sys.argv[2]
-    r = requests.get(f'https://api.github.com/repos/{user}/{repo}/commits')
+    r = requests.get(f"https://api.github.com/repos/{user}/{repo}/commits")
     commits = r.json()[:10]
 
     for commit in commits:
         print('{}: {}'.format(commit.get('sha'),
               commit.get('commit').get('author').get('name')))
-
-
-if __name__ == '__main__':
-    main()
