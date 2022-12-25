@@ -13,8 +13,8 @@ def main():
     r = requests.get(f'https://api.github.com/repos/{user}/{repo}/commits')
     commit_list = r.json()
     for commit in commit_list[0:10]:
-        print('{}: {}'.format(commit['sha'],
-              commit['commit']['author']['name']))
+        print('{}: {}'.format(commit.get('sha'),
+              commit.get('commit').get('author').get('name')))
 
 
 if __name__ == '__main__':
