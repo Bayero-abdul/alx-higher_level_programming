@@ -10,9 +10,9 @@ if __name__ == '__main__':
     import requests
 
     user, repo = sys.argv[1], sys.argv[2]
-    r = requests.get(f"https://api.github.com/repos/{user}/{repo}/commits")
-    commits = r.json()[:10]
+    r = requests.get(f'https://api.github.com/repos/{user}/{repo}/commits')
+    author_commit = r.json()[:10]
 
-    for commit in commits:
-        print('{}: {}'.format(commit.get('sha'),
-              commit.get('commit').get('author').get('name')))
+    for commit in author_commit:
+        print(f"{commit.get('sha')}:", end=" ")
+        print(commit.get('commit').get('author').get('name'))
