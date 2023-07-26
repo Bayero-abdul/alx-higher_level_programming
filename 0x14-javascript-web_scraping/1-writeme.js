@@ -1,12 +1,15 @@
 #!/usr/bin/node
 
 const fs = require('fs');
-const file = process.argv[2];
-const text = process.argv[3];
 
-const data = new Uint8Array(Buffer.from(text));
-fs.writeFile(file, data, (err) => {
-  if (err) {
-    console.log(err);
-  }
-});
+const args = process.argv.slice(2);
+
+if (args.length === 2) {
+  const file = args[0];
+  const content = args[1];
+  fs.writeFile(file, content, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+}
