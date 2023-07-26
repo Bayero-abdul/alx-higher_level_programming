@@ -18,7 +18,9 @@ request.get(todoApiUrl, function (e, r, body) {
         }
       }
       
-      if (numberOfUsers <= 2) {
+      const numberOfUsers = Object.keys(completed).length;
+
+      if (numberOfUsers <) {
         console.log(completed);
       } else {
       	for (const userId in completed) {
