@@ -18,7 +18,7 @@ request.get(todoApiUrl, function (e, r, body) {
         }
       }
       const numberOfUsers = Object.keys(completed).length;
-      if (numberOfUsers <= 2) {
+      if (numberOfUsers <= 8) {
         const jsonString = JSON.stringify(completed);
 	const formattedString = jsonString.replace(/"/g, "'");
 	console.log(formattedString);
