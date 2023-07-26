@@ -17,7 +17,12 @@ request.get(todoApiUrl, function (e, r, body) {
           completed[t.userId] = (completed[t.userId] || 0) + 1;
         }
       }
-      console.log(completed);
+      const numberOfUsers = Object.keys(completed).length;
+      if (numberOfUsers <= 8) {
+      	console.log(JSON.stringify(completed));
+      } else {
+	console.log(completed);
+      }
     }
   }
 });
