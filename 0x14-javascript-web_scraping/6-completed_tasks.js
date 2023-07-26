@@ -17,15 +17,7 @@ request.get(todoApiUrl, function (e, r, body) {
           completed[t.userId] = (completed[t.userId] || 0) + 1;
         }
       }
-      
-      const numberOfUsers = Object.keys(completed).length;
-
-      if (numberOfUsers <) {
-        console.log(completed);
-      } else {
-      	for (const userId in completed) {
-          console.log(`${userId}: ${completed[userId]}`);
-        }
-     }
+      console.log(completed);
+    }
   }
 });
