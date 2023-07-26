@@ -10,23 +10,14 @@ request.get(todoApiUrl, function (e, r, body) {
   } else {
     if (r.statusCode === 200) {
       const todosList = JSON.parse(body);
-      const numOfTaskById = {};
+      const completed = {};
 
-      let count = 0;
-      let userId = todosList[0].userId;
-
-      for (const task of todosList) {
-        if (task.userId === userId) {
-          if (task.completed === true) { count++; }
-        } else {
-          numOfTaskById[userId] = count;
-          userId = task.userId;
-          count = 0;
-          if (task.completed === true) { count++; }
+      for (const t of todosList) {
+        if (t.completed) {
+          completed[t.userId] = (completed[t.userId] || 0) + 1;
         }
       }
-      numOfTaskById[userId] = count;
-      console.log(numOfTaskById);
+      console.log(completed);
     }
   }
 });
