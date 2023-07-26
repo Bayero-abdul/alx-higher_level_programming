@@ -17,16 +17,7 @@ request.get(todoApiUrl, function (e, r, body) {
           completed[t.userId] = (completed[t.userId] || 0) + 1;
         }
       }
-      const numberOfUsers = Object.keys(completed).length;
-      if (numberOfUsers == 0) {
-	console.log({});
-      } else if (numberOfUsers <= 2) {
-        const jsonString = JSON.stringify(completed);
-	const formattedString = jsonString.replace(/"/g, "'");
-	console.log(formattedString);
-      } else {
-        console.log(completed);
-      }
+      console.log(completed);
     }
   }
 });
