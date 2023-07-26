@@ -6,6 +6,7 @@ const apiUrl = process.argv[2];
 
 const characterId = 18;
 let count = 0;
+
 request.get(apiUrl, function (e, r, body) {
   if (e) {
     console.error(e);
